@@ -55,7 +55,7 @@ export default function Home() {
       {/* Intro Section - Minimal & Clean */}
       <section className="py-24 px-6 md:px-1 max-w-2xl mx-auto text-center">
         <p className="md:text-[28px] font-serif leading-loose font-light tracking-wide antialiased [-webkit-text-stroke:_1px]" style={{ fontFamily: 'var(--font-hatton), serif' }}>
-          Located in the center of Port Barton surrounded by 1,500 meters of clean and finest white sand beach with crystal water and coconut trees at the northwestern part of Palawan.
+          Stay in the heart of Port Barton on a 1.5‑kilometer stretch of white‑sand beach, with crystal‑clear water and coconut trees right outside your door.
         </p>
       </section>
 

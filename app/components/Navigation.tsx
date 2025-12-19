@@ -86,24 +86,49 @@ export default function Navigation() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 * index, duration: 0.5 }}
                                 >
-                                    <Link
+                                    <RollingLettersLink
                                         href={item.href}
+                                        label={item.label}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-3xl md:text-5xl font-serif text-white hover:text-teal-200 transition-colors"
-                                        style={{ fontFamily: 'var(--font-hatton), serif' }}
-                                    >
-                                        {item.label}
-                                    </Link>
+                                    />
                                 </motion.div>
                             ))}
                         </div>
 
                         <div className="mt-16 text-white/30 text-xs tracking-[0.2em] uppercase">
-                            Escape to Paradise
+                            Ausan Beachfront
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
         </>
+    );
+}
+
+function RollingLettersLink({ href, label, onClick }: { href: string; label: string; onClick: () => void }) {
+    return (
+        <Link
+            href={href}
+            onClick={onClick}
+            className="group block overflow-hidden py-2"
+        >
+            <div className="flex">
+                {label.split('').map((char, i) => (
+                    <span key={i} className="relative overflow-hidden">
+                        <div
+                            className="relative transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full"
+                            style={{ transitionDelay: `${i * 30}ms` }}
+                        >
+                            <span className="block text-3xl md:text-5xl font-serif text-white whitespace-pre" style={{ fontFamily: 'var(--font-hatton), serif' }}>
+                                {char}
+                            </span>
+                            <span className="absolute top-full left-0 block text-3xl md:text-5xl font-serif text-white whitespace-pre" style={{ fontFamily: 'var(--font-hatton), serif' }}>
+                                {char}
+                            </span>
+                        </div>
+                    </span>
+                ))}
+            </div>
+        </Link>
     );
 }
