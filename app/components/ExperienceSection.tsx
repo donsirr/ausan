@@ -8,19 +8,19 @@ const experiences = [
     {
         title: "Private Villas",
         description: "Wake up to the sound of waves in your own private sanctuary over the water, designed for absolute seclusion and comfort.",
-        image: "/images/villa.png",
+        image: "/images/villa.jpg",
         cta: "Discover More",
     },
     {
         title: "Gourmet Dining",
         description: "Savor exquisite flavors freshly prepared by our world-class chefs under the stars, blending local ingredients with global culinary art.",
-        image: "/images/dining.png",
+        image: "/images/dining.jpg",
         cta: "View Menus",
     },
     {
         title: "Wellness & Spa",
         description: "Rejuvenate your body and mind with treatments inspired by ancient island traditions, surrounded by the calming sounds of nature.",
-        image: "/images/spa.png",
+        image: "/images/spa.jpg",
         cta: "Relax Now",
     },
 ];
