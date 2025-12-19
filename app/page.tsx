@@ -1,10 +1,12 @@
 import Link from "next/link";
 import ExperienceSection from "./components/ExperienceSection";
 import Navigation from "./components/Navigation";
+import Preloader from "./components/Preloader";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900 font-sans selection:bg-teal-200 selection:text-teal-900">
+      <Preloader />
       {/* Navigation */}
       <Navigation />
 
