@@ -110,22 +110,28 @@ function RollingLettersLink({ href, label, onClick }: { href: string; label: str
         <Link
             href={href}
             onClick={onClick}
-            className="group block overflow-hidden py-2"
+            className="group block overflow-hidden"
         >
-            <div className="flex">
+            <div className="flex justify-center">
                 {label.split('').map((char, i) => (
                     <span key={i} className="relative overflow-hidden">
-                        <div
-                            className="relative transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full"
+                        <span
+                            className="block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full"
                             style={{ transitionDelay: `${i * 30}ms` }}
                         >
-                            <span className="block text-3xl md:text-5xl font-serif text-white whitespace-pre" style={{ fontFamily: 'var(--font-hatton), serif' }}>
-                                {char}
+                            <span
+                                className="block text-3xl md:text-5xl font-serif text-white py-3 leading-tight"
+                                style={{ fontFamily: 'var(--font-hatton), serif' }}
+                            >
+                                {char === " " ? "\u00A0" : char}
                             </span>
-                            <span className="absolute top-full left-0 block text-3xl md:text-5xl font-serif text-white whitespace-pre" style={{ fontFamily: 'var(--font-hatton), serif' }}>
-                                {char}
+                            <span
+                                className="absolute top-full left-0 block text-3xl md:text-5xl font-serif text-white py-3 leading-tight"
+                                style={{ fontFamily: 'var(--font-hatton), serif' }}
+                            >
+                                {char === " " ? "\u00A0" : char}
                             </span>
-                        </div>
+                        </span>
                     </span>
                 ))}
             </div>
