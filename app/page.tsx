@@ -38,7 +38,7 @@ export default function Home() {
           </h1>
 
           <p className="text-white/80 text-xs md:text-sm font-medium tracking-[0.1em] uppercase mt-4 max-w-md mx-auto" style={{ fontFamily: 'var(--font-messina), sans-serif' }}>
-            A Tropical Paradise Beachfront Experience
+            Wake up steps away from the shore
           </p>
 
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
