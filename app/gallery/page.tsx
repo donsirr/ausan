@@ -4,7 +4,6 @@ const galleryImages = [
     { src: "/images/villa.jpg", alt: "Private Ocean Villa", span: "md:col-span-2 md:row-span-2" },
     { src: "/images/dining.jpg", alt: "Beachside Dining", span: "md:col-span-1 md:row-span-1" },
     { src: "/images/spa.jpg", alt: "Wellness Spa", span: "md:col-span-1 md:row-span-2" },
-    { src: "/images/hero.png", alt: "Sunset View", span: "md:col-span-1 md:row-span-1" },
     { src: "/images/dining.jpg", alt: "Culinary Delight", span: "md:col-span-1 md:row-span-1" },
     { src: "/images/villa.jpg", alt: "Luxury Interior", span: "md:col-span-1 md:row-span-2" },
     { src: "/images/spa.jpg", alt: "Relaxation Area", span: "md:col-span-2 md:row-span-1" },

@@ -42,7 +42,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                                     Stay Updated
                                 </span>
                                 <h2 className="text-3xl md:text-4xl text-white font-serif mb-4" style={{ fontFamily: 'var(--font-hatton), serif' }}>
-                                    Join construction
+                                    Your Next Getaway
                                 </h2>
                                 <p className="text-stone-400 mb-8 font-light leading-relaxed" style={{ fontFamily: 'var(--font-messina), sans-serif' }}>
                                     Sign up for exclusive offers, travel inspiration, and the latest news from Ausan Beachfront.
