@@ -17,10 +17,10 @@ export default function Navigation() {
     }, []);
 
     const menuItems = [
-        { label: "About", href: "#" },
-        { label: "Experiences", href: "#experiences" },
-        { label: "Gallery", href: "#" },
-        { label: "Contact", href: "#" },
+        { label: "About", href: "/#about" },
+        { label: "Experiences", href: "/#experiences" },
+        { label: "Gallery", href: "/gallery" },
+        { label: "Contact", href: "/#contact" },
     ];
 
     return (

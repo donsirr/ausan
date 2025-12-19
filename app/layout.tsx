@@ -1,71 +1,33 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScrolling from "./components/SmoothScrolling";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// Load Custom Premium Fonts
 const hatton = localFont({
   src: [
-    {
-      path: "../public/fonts/PP Hatton Ultralight.otf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PP Hatton Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/PP Hatton Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
+    { path: '../public/fonts/PP Hatton Medium.otf', weight: '500', style: 'normal' },
+    { path: '../public/fonts/PP Hatton Bold.otf', weight: '700', style: 'normal' },
   ],
-  variable: "--font-hatton",
+  variable: '--font-hatton'
 });
 
 const messina = localFont({
   src: [
-    {
-      path: "../public/fonts/MessinaSans-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/MessinaSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/MessinaSans-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/MessinaSans-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
+    { path: '../public/fonts/MessinaSans-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../public/fonts/MessinaSans-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: '../public/fonts/MessinaSans-Bold.ttf', weight: '700', style: 'normal' },
   ],
-  variable: "--font-messina",
+  variable: '--font-messina'
 });
 
 export const metadata: Metadata = {
   title: "Ausan | Tropical Paradise Resort",
-  description: "Experience the ultimate luxury at Ausan, your tropical sanctuary.",
+  description: "Experience the ultimate luxury at Ausan Beachfront Resort.",
 };
-
-import SmoothScrolling from "./components/SmoothScrolling";
 
 export default function RootLayout({
   children,
@@ -73,11 +35,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${hatton.variable} ${messina.variable} antialiased`}
+        className={`${hatton.variable} ${messina.variable} antialiased bg-stone-900`}
       >
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          <Preloader />
+          <Navigation />
+          {children}
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );
