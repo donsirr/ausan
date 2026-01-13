@@ -14,7 +14,7 @@ export default function Footer() {
                     <div className="col-span-1 md:col-span-2">
                         <h4 className="text-2xl font-serif text-white mb-6 tracking-widest uppercase">Ausan</h4>
                         <p className="max-w-sm mb-6">
-                            A luxury tropical resort redefining the art of relaxation.
+                            An affordable tropical accommodation redefining the art of relaxation.
                             Copyright © {new Date().getFullYear()} Ausan Beachfront.
                         </p>
                     </div>
