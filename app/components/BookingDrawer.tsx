@@ -9,17 +9,13 @@ import PaymentForm from './PaymentForm';
 // --- Placeholder Components for missing steps ---
 
 const StepPlaceholder = ({ title, onNext }: { title: string; onNext: () => void }) => (
-    <motion.div
-        initial={{ x: 20, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        className="space-y-6"
-    >
+    <div className="space-y-6">
         <h2 className="text-3xl" style={{ fontFamily: 'var(--font-hatton), serif' }}>{title}</h2>
         <p className="opacity-70 font-light">This step is under construction properly.</p>
         <button onClick={onNext} className="btn-primary mt-4 border-b border-current pb-1 uppercase text-xs tracking-widest">
             Proceed (Dev Skip)
         </button>
-    </motion.div>
+    </div>
 );
 
 const SearchStep = () => {
@@ -43,12 +39,29 @@ const SearchStep = () => {
     );
 }
 
-const ConfirmationStep = () => (
-    <div className="text-center space-y-6 py-20">
-        <h2 className="text-4xl" style={{ fontFamily: 'var(--font-hatton), serif' }}>Thank You</h2>
-        <p>Your sanctuary awaits.</p>
-    </div>
-)
+const ConfirmationStep = () => {
+    const { dispatch } = useBooking();
+    return (
+        <div className="text-center space-y-6 py-20">
+            <h2 className="text-4xl" style={{ fontFamily: 'var(--font-hatton), serif' }}>Thank You</h2>
+            <p className="opacity-70 font-light">Your sanctuary awaits.</p>
+            <div className="flex flex-col items-center space-y-4 mt-8">
+                <button
+                    onClick={() => dispatch({ type: 'CLOSE_DRAWER' })}
+                    className="w-full px-8 py-3 bg-stone-900 text-[var(--stone-50)] hover:opacity-90 transition-opacity uppercase tracking-widest text-xs font-bold"
+                >
+                    Back to Website
+                </button>
+                <button
+                    onClick={() => dispatch({ type: 'RESTART_BOOKING' })}
+                    className="w-full px-8 py-3 bg-transparent border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-[var(--stone-50)] transition-colors uppercase tracking-widest text-xs font-bold"
+                >
+                    Book Another Stay
+                </button>
+            </div>
+        </div>
+    );
+}
 
 // --- Drawer Component ---
 
@@ -144,7 +157,17 @@ export default function BookingDrawer() {
 
                             {/* Content Area */}
                             <div className="flex-1 p-6 md:p-10">
-                                {renderStep()}
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={step}
+                                        initial={{ x: 20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        exit={{ x: -20, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        {renderStep()}
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
 
                         </div>

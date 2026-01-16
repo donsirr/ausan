@@ -4,12 +4,12 @@ import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 
 // --- Types ---
 
-export type BookingStep = 
-  | 'search' 
-  | 'results' 
-  | 'details' 
-  | 'guest_info' 
-  | 'payment' 
+export type BookingStep =
+  | 'search'
+  | 'results'
+  | 'details'
+  | 'guest_info'
+  | 'payment'
   | 'confirmation';
 
 export interface SearchParams {
@@ -52,7 +52,8 @@ type BookingAction =
   | { type: 'SET_GUEST_DETAILS'; payload: Partial<GuestDetails> }
   | { type: 'OPEN_DRAWER' }
   | { type: 'CLOSE_DRAWER' }
-  | { type: 'RESET_BOOKING' };
+  | { type: 'RESET_BOOKING' }
+  | { type: 'RESTART_BOOKING' };
 
 // --- Initial State ---
 
@@ -71,7 +72,7 @@ const initialState: BookingState = {
     email: '',
     phone: '',
   },
-  isDrawerOpen: false, 
+  isDrawerOpen: false,
 };
 
 // --- Reducer ---
@@ -92,6 +93,8 @@ function bookingReducer(state: BookingState, action: BookingAction): BookingStat
       return { ...state, isDrawerOpen: false };
     case 'RESET_BOOKING':
       return initialState;
+    case 'RESTART_BOOKING':
+      return { ...initialState, isDrawerOpen: true };
     default:
       return state;
   }

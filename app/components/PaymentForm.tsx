@@ -31,11 +31,7 @@ export default function PaymentForm() {
     };
 
     return (
-        <motion.div
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            className="space-y-6"
-        >
+        <div className="space-y-6">
             <div className="space-y-2 mb-8">
                 <h2 className="text-3xl" style={{ fontFamily: 'var(--font-hatton), serif' }}>
                     Secure Payment
@@ -123,6 +119,6 @@ export default function PaymentForm() {
                 <div className="h-6 w-10 bg-current"></div>
                 <div className="h-6 w-10 bg-current"></div>
             </div>
-        </motion.div>
+        </div>
     );
 }
