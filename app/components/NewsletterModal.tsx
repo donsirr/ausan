@@ -17,8 +17,9 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         onClick={onClose}
-                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70]"
+                        className="fixed inset-0 bg-black/80 z-[70] will-change-opacity"
                     />
 
                     {/* Modal Container */}
@@ -27,7 +28,8 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="bg-stone-900 border border-stone-800 p-8 md:p-12 max-w-lg w-full relative pointer-events-auto shadow-2xl"
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            className="bg-stone-900 border border-stone-800 p-8 md:p-12 max-w-lg w-full relative pointer-events-auto shadow-2xl will-change-transform"
                         >
                             {/* Close Button */}
                             <button

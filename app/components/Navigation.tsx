@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useBooking } from "../context/BookingContext";
 
 export default function Navigation() {
+    const { dispatch } = useBooking();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -51,7 +53,10 @@ export default function Navigation() {
                 </div>
 
                 {/* Contact CTA */}
-                <button className="hidden md:block border border-white/30 text-white px-6 py-2 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-stone-900 transition-all backdrop-blur-sm">
+                <button
+                    onClick={() => dispatch({ type: 'OPEN_DRAWER' })}
+                    className="hidden md:block border border-white/30 text-white px-6 py-2 rounded-sm text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-stone-900 transition-all backdrop-blur-sm"
+                >
                     Book Now
                 </button>
             </nav>

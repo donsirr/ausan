@@ -5,6 +5,8 @@ import SmoothScrolling from "./components/SmoothScrolling";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
+import { BookingProvider } from "./context/BookingContext";
+import BookingDrawer from "./components/BookingDrawer";
 
 // Load Custom Premium Fonts
 const hatton = localFont({
@@ -25,7 +27,7 @@ const messina = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ausan | Tropical Paradise Resort",
+  title: "Ausan | Tropical Accomodation",
   description: "Experience the ultimate luxury at Ausan Beachfront Resort.",
 };
 
@@ -39,12 +41,15 @@ export default function RootLayout({
       <body
         className={`${hatton.variable} ${messina.variable} antialiased bg-stone-900`}
       >
-        <SmoothScrolling>
-          <Preloader />
-          <Navigation />
-          {children}
-          <Footer />
-        </SmoothScrolling>
+        <BookingProvider>
+          <SmoothScrolling>
+            <Preloader />
+            <Navigation />
+            {children}
+            <Footer />
+          </SmoothScrolling>
+          <BookingDrawer />
+        </BookingProvider>
       </body>
     </html>
   );
