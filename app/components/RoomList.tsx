@@ -64,7 +64,7 @@ export default function RoomList() {
                         key={room.id}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="group relative bg-white border border-[var(--teal-900)]/10 overflow-hidden"
+                        className="group relative bg-white border border-stone-900/10 overflow-hidden"
                     >
                         {/* Image Aspect Ratio Container */}
                         <div className="relative aspect-[16/9] overflow-hidden">
@@ -90,7 +90,7 @@ export default function RoomList() {
 
                             <button
                                 onClick={() => handleSelectRoom(room)}
-                                className="w-full mt-4 py-3 border border-[var(--teal-900)] text-[var(--teal-900)] hover:bg-[var(--teal-900)] hover:text-[var(--stone-50)] transition-colors uppercase tracking-widest text-xs font-bold"
+                                className="w-full mt-4 py-3 border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-[var(--stone-50)] transition-colors uppercase tracking-widest text-xs font-bold"
                             >
                                 Select Room
                             </button>

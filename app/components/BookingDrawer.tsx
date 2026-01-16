@@ -29,13 +29,13 @@ const SearchStep = () => {
             <h2 className="text-3xl" style={{ fontFamily: 'var(--font-hatton), serif' }}>Check Availability</h2>
             <div className="space-y-4">
                 {/* Search Form Inputs would go here */}
-                <div className="p-4 border border-[var(--teal-900)]/20">
+                <div className="p-4 border border-stone-900/20">
                     <p className="opacity-50 text-sm">Select Dates...</p>
                 </div>
             </div>
             <button
                 onClick={() => dispatch({ type: 'SET_STEP', payload: 'results' })}
-                className="w-full py-4 bg-[var(--teal-900)] text-[var(--stone-50)] uppercase tracking-widest text-xs font-bold"
+                className="w-full py-4 bg-stone-900 text-[var(--stone-50)] uppercase tracking-widest text-xs font-bold"
             >
                 Search Rooms
             </button>
@@ -85,6 +85,16 @@ export default function BookingDrawer() {
         return () => window.removeEventListener('keydown', handleEsc);
     }, [dispatch]);
 
+    // Lock Body Scroll
+    useEffect(() => {
+        if (isDrawerOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [isDrawerOpen]);
+
     return (
         <AnimatePresence>
             {isDrawerOpen && (
@@ -104,12 +114,13 @@ export default function BookingDrawer() {
                         animate={{ x: '0%' }}
                         exit={{ x: '100%' }}
                         transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                        className="fixed top-0 right-0 h-full w-full md:w-[600px] bg-[var(--stone-50)] text-[var(--teal-900)] shadow-2xl z-50 overflow-y-auto will-change-transform"
+                        className="fixed top-0 right-0 h-full w-full md:w-[600px] bg-[var(--stone-50)] text-stone-900 shadow-2xl z-50 overflow-y-auto will-change-transform"
+                        data-lenis-prevent
                     >
                         <div className="flex flex-col min-h-full">
 
                             {/* Header */}
-                            <div className="flex items-center justify-between p-6 md:p-10 border-b border-[var(--teal-900)]/10">
+                            <div className="flex items-center justify-between p-6 md:p-10 border-b border-stone-900/10">
                                 <div className="flex items-center space-x-2 text-xs uppercase tracking-widest opacity-60">
                                     <span className={step === 'search' ? 'font-bold opacity-100' : ''}>01</span>
                                     <span>/</span>

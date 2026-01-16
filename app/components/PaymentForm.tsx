@@ -53,7 +53,7 @@ export default function PaymentForm() {
                     </label>
                     <input
                         {...register('cardholderName')}
-                        className="w-full bg-transparent border-b border-[var(--teal-900)]/30 py-3 text-lg focus:border-[var(--teal-900)] focus:outline-none transition-colors"
+                        className="w-full bg-transparent border-b border-stone-900/30 py-3 text-lg focus:border-stone-900 focus:outline-none transition-colors"
                         placeholder="JACOB JONES"
                     />
                     {errors.cardholderName && (
@@ -68,7 +68,7 @@ export default function PaymentForm() {
                     </label>
                     <input
                         {...register('cardNumber')}
-                        className="w-full bg-transparent border-b border-[var(--teal-900)]/30 py-3 text-lg focus:border-[var(--teal-900)] focus:outline-none transition-colors font-mono"
+                        className="w-full bg-transparent border-b border-stone-900/30 py-3 text-lg focus:border-stone-900 focus:outline-none transition-colors font-mono"
                         placeholder="0000 0000 0000 0000"
                     />
                     {errors.cardNumber && (
@@ -84,7 +84,7 @@ export default function PaymentForm() {
                         </label>
                         <input
                             {...register('expiryDate')}
-                            className="w-full bg-transparent border-b border-[var(--teal-900)]/30 py-3 text-lg focus:border-[var(--teal-900)] focus:outline-none transition-colors font-mono"
+                            className="w-full bg-transparent border-b border-stone-900/30 py-3 text-lg focus:border-stone-900 focus:outline-none transition-colors font-mono"
                             placeholder="MM/YY"
                         />
                         {errors.expiryDate && (
@@ -99,7 +99,7 @@ export default function PaymentForm() {
                         </label>
                         <input
                             {...register('cvc')}
-                            className="w-full bg-transparent border-b border-[var(--teal-900)]/30 py-3 text-lg focus:border-[var(--teal-900)] focus:outline-none transition-colors font-mono"
+                            className="w-full bg-transparent border-b border-stone-900/30 py-3 text-lg focus:border-stone-900 focus:outline-none transition-colors font-mono"
                             placeholder="123"
                             maxLength={4}
                         />
@@ -111,7 +111,7 @@ export default function PaymentForm() {
 
                 <button
                     type="submit"
-                    className="w-full mt-8 py-4 bg-[var(--teal-900)] text-[var(--stone-50)] uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-opacity"
+                    className="w-full mt-8 py-4 bg-stone-900 text-[var(--stone-50)] uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-opacity"
                 >
                     Confirm Reservation
                 </button>
